@@ -1,2 +1,0 @@
-ops
-sum_double

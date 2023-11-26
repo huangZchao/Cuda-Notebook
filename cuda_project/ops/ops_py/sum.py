@@ -18,7 +18,7 @@ class SumDouble(Function):
 
         y = x1.new_zeros(x1.shape)
 
-        sum_double(x1.contiguous(), x2.contiguous(), y)
+        sum_double.forward(x1.contiguous(), x2.contiguous(), y)
 
         return y
     

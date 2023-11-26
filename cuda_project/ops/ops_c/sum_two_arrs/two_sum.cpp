@@ -2,7 +2,7 @@
 #include <torch/serialize/tensor.h>
 
 #define CHECK_CUDA(x) \
-    TORCH_CHECK(x.type.is_cuda(), #x, " must be a cuda tensor ")
+    TORCH_CHECK(x.type().is_cuda(), #x, " must be a cuda tensor ")
 #define CHECK_CONTIGUOUS(x) \
   TORCH_CHECK(x.is_contiguous(), #x, " must be contiguous ")
 #define CHECK_INPUT(x) \
