@@ -12,7 +12,7 @@
 
 void matmul_v1_launcher(const float* a, const float* b, float* c, int m, int n, int k);
 
-void matmul_v1_gpu(at::Tensor a_tensor, at::Tensor b_tensor, at::Tensor c_tensor, at::kInt m, at::kInt n, at::kInt k) {
+void matmul_v1_gpu(at::Tensor a_tensor, at::Tensor b_tensor, at::Tensor c_tensor, int m, int n, int k) {
     CHECK_INPUT(a_tensor);
     CHECK_INPUT(b_tensor);
     CHECK_INPUT(c_tensor);

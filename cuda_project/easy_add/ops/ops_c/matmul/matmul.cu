@@ -9,7 +9,7 @@ __global__ void matmul_v1_kernel(const float* a, const float* b, float* c, int m
     int ncol = blockIdx.y * blockDim.y + threadIdx.y;
 
     for(int i = 0; i < k; ++i) {
-        c[nrow * n + ncol] += a[nrow * k + i] * b[i * n + ncol]
+        c[nrow * n + ncol] += a[nrow * k + i] * b[i * n + ncol];
     }
 }
 
@@ -17,4 +17,8 @@ void matmul_v1_launcher(const float* a, const float* b, float* c, int m, int n, 
     dim3 blockSize(DIVUP(m, THREAD_PER_BLOCK), DIVUP(n, THREAD_PER_BLOCK));
     dim3 threadSize(THREAD_PER_BLOCK);
     matmul_v1_kernel<<<blockSize, threadSize>>>(a, b, c, m, n, k);
+}
+
+int main() {
+    return 0;
 }
