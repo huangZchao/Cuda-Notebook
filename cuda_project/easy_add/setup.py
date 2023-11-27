@@ -8,11 +8,16 @@ setup(
     author='hzc',
 
     ext_modules=[
+        # CUDAExtension(
+        #     'sum_double',
+        #     ['./ops/ops_c/sum_two_arrs/two_sum.cpp',
+        #      './ops/ops_c/sum_two_arrs/two_sum_cuda.cu',]
+        # ),
         CUDAExtension(
-            'sum_double',
-            ['./ops/ops_c/sum_two_arrs/two_sum.cpp',
-             './ops/ops_c/sum_two_arrs/two_sum_cuda.cu',]
-        ),
+            'matmul',
+            ['./ops/ops_c/matmul/matmul.cpp',
+             './ops/ops_c/matmul/matmul.cu',]
+        ),        
     ],
     cmdclass={
         'build_ext': BuildExtension
