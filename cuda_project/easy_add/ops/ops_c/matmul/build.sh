@@ -1,0 +1,1 @@
+nvcc -o matmul matmul_cuda.cu
