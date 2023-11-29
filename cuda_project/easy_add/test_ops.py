@@ -19,7 +19,7 @@ class Timer:
         print(f"Average time cost of {self.op_name} is {(self.end_time - self.begin_time) * 1000:.4f} ms")
 
 if __name__ == '__main__':
-    n = 10000
+    n = 10
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     array1 = torch.ones(n, dtype=torch.float32, device=device, requires_grad=True)
     array2 = torch.ones(n, dtype=torch.float32, device=device, requires_grad=True)
@@ -27,10 +27,12 @@ if __name__ == '__main__':
         ans = sum_double_op(array1, array2)
     assert (ans == 2).all()
 
-    k = 50
-    m = 80
-    mat1 = torch.tensor(np.random.rand(m, k), dtype=torch.float32, device=device, requires_grad=True)
-    mat2 = torch.tensor(np.random.rand(k, n), dtype=torch.float32, device=device, requires_grad=True)
+    k = 10
+    m = 10
+    # mat1 = torch.tensor(np.random.rand(m, k), dtype=torch.float32, device=device, requires_grad=True)
+    # mat2 = torch.tensor(np.random.rand(k, n), dtype=torch.float32, device=device, requires_grad=True)
+    mat1 = torch.tensor(np.ones((m, k)), dtype=torch.float32, device=device, requires_grad=True)
+    mat2 = torch.tensor(np.ones((k, n)), dtype=torch.float32, device=device, requires_grad=True)    
     with Timer("matmu_v1"):
         ans = matmul_v1_op(mat1, mat2)
     torch_ans = torch.matmul(mat1, mat2)

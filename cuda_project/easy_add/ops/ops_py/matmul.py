@@ -20,7 +20,7 @@ class MatmulV1(Function):
 
         y = x1.new_zeros([m, n])
 
-        matmul.matmul_v1_gpu(x1.contiguous(), x2.contiguous(), y, m, n, k)
+        matmul.matmul_v1_gpu(x1.contiguous(), x2.contiguous(), y, m, k, n)
         
         ctx.save_for_backward(x1, x2)
 

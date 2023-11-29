@@ -10,9 +10,9 @@
   CHECK_CONTIGUOUS(x)
 
 
-void matmul_v1_launcher(const float* a, const float* b, float* c, int m, int n, int k);
+void matmul_v1_launcher(const float* a, const float* b, float* c, int m, int k, int n);
 
-void matmul_v1_gpu(at::Tensor a_tensor, at::Tensor b_tensor, at::Tensor c_tensor, int m, int n, int k) {
+void matmul_v1_gpu(at::Tensor a_tensor, at::Tensor b_tensor, at::Tensor c_tensor, int m, int k, int n) {
     CHECK_INPUT(a_tensor);
     CHECK_INPUT(b_tensor);
     CHECK_INPUT(c_tensor);
@@ -21,7 +21,7 @@ void matmul_v1_gpu(at::Tensor a_tensor, at::Tensor b_tensor, at::Tensor c_tensor
     const float* b = b_tensor.data_ptr<float>();
     float* c = c_tensor.data_ptr<float>();
     
-    matmul_v1_launcher(a, b, c, m, n, k);
+    matmul_v1_launcher(a, b, c, m, k, n);
 }
 
 
