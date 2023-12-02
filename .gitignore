@@ -46,3 +46,5 @@ cuda_project/easy_add/CudaDemo.egg-info/top_level.txt
 cuda_project/easy_add/ops/ops_c/matmul/matmul.cu
 cuda_project/easy_add/ops/ops_py/__pycache__/matmul.cpython-310.pyc
 cuda_project/easy_add/ops/ops_c/matmul/matmul
+cuda_project/easy_add/ops/ops_c/matmul/matmul_v2
+cuda_project/easy_add/build/temp.linux-x86_64-3.10/ops/ops_c/matmul/matmul_cuda_v2.o

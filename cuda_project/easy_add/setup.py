@@ -16,7 +16,8 @@ setup(
         CUDAExtension(
             'matmul',
             ['./ops/ops_c/matmul/matmul.cpp',
-             './ops/ops_c/matmul/matmul_cuda.cu',]
+             './ops/ops_c/matmul/matmul_cuda.cu',
+             './ops/ops_c/matmul/matmul_cuda_v2.cu']
         ),        
     ],
     cmdclass={
